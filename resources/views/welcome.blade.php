@@ -3,11 +3,21 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <div class="row justify-content-center align-item-center">
+        <div class="col text-center">
+        <h1>BITÁCORA DE NOVEDADES UFA ESPE-SD</h1>
+        </div>
+    </div>
+    
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div class="row">
+        <div class="col ">
+            <img class="img-fluid img-border" src="{{ asset('vendor/adminlte/dist/img/fondo_santoDomingo.jpg') }}" alt="imagen santo domingo">
+        </div>
+    </div>
+
 @stop
 
 @section('css')
