@@ -306,30 +306,30 @@ return [
         
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
+            'url'  => 'index1',
             'can'  => 'manage-blog',
         ],
         
         ['header' => 'MENÚ DE OPCIONES'],
         [
             'text' => 'NOVEDADES',
-            'url'  => 'admin/settings',
+            'url'  => 'binnacle',
             'icon' => 'fas fa-fw fa-book-open',
         ],
         [
             'text' => 'MOVIMIENTO VEHICULAR',
-            'url'  => 'admin/settings',
+            'url'  => 'vehicles',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
             'text' => 'CONSIGNAS',
-            'url'  => 'admin/settings',
+            'url'  => 'pendings',
             'icon' => 'fas fa-fw fa-book-open',
             'icon_color' => 'red'
         ],
         [
             'text' => 'REPORTES',
-            'url'  => 'admin/settings',
+            'url'  => 'reports',
             'icon' => 'fas fa-fw fa-file',
             'icon_color' => 'red'
         ],

@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'UFA-ESPE')
+@section('title', 'BITÁCORA')
 
 @section('content_header')
     <div class="row justify-content-center align-item-center">
         <div class="col text-center">
-        <h1>BITÁCORA DE NOVEDADES UFA ESPE-SD</h1>
+        <h1>NOVEDADES</h1>
         </div>
     </div>
     
@@ -14,7 +14,7 @@
 @section('content')
     <div class="row">
         <div class="col ">
-            <img class="img-fluid img-border img-round" src="{{ asset('vendor/adminlte/dist/img/fondo_santoDomingo.jpg') }}" alt="imagen santo domingo">
+            AQUÍ VA LA TABLA DE MOVIMIENTO DE NOVEDADES
         </div>
     </div>
 
