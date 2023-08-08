@@ -19,7 +19,6 @@
 
 
 @section('content')
-    {{-- ESPACIO DE BOTÓN PARA REGISTRAR NOVEDADES --}}
 
     <div class="row">
 

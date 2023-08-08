@@ -45,6 +45,7 @@
                                 <th class="text-center">ORD</th>
                                 <th class="text-center">PLACA</th>
                                 <th class="text-center">DESCRIPCIÓN</th>
+                                <th class="text-center">CONDUCTOR</th>
                                 <th class="text-center">HORA SALIDA</th>
                                 <th class="text-center">HORA ENTRADA</th>
                                 <th class="text-center">DESTINO</th>
@@ -113,6 +114,9 @@
                                     <td class="text-center">
                                         -
                                     </td>
+                                    <td class="text-center">
+                                        -
+                                    </td>
                                 </tr>
                             @endfor
                         </tbody>
@@ -138,13 +142,14 @@
                     <table id="vehiclesOutTable" class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th>Ord</th>
-                                <th>Placa</th>
-                                <th>Descripción</th>
-                                <th>Salida</th>
-                                <th>Destino</th>
-                                <th>Misión</th>
-                                <th>GUARDIA SALIDA</th>
+                                <th class='text-center'>ORD</th>
+                                <th class='text-center'>PLACA</th>
+                                <th class='text-center'>DESCRIPCIÓN</th>
+                                <th class='text-center'>CONDUCTOR</th>
+                                <th class='text-center'>SALIDA</th>
+                                <th class='text-center'>DESTINO</th>
+                                <th class='text-center'>MISIÓN</th>
+                                <th class='text-center'>GUARDIA SALIDA</th>
 
                             </tr>
                         </thead>
@@ -161,6 +166,9 @@
                                     </td>
                                     <td class="text-center">
                                         PEC-7720
+                                    </td>
+                                    <td class="text-center">
+                                        -
                                     </td>
                                     <td class="text-center">
                                         -
