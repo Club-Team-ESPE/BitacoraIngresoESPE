@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Driver extends Model
+class Guard extends Model
 {
     use HasFactory, SoftDeletes;
 
-    
     protected $fillable=[
         "identification_card",
         "phone",
         "blood_type",
-        "rank_id",
+        "password",
         "created_by",
         "updated_by",
         "deleted_by"
