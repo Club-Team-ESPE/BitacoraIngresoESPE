@@ -24,6 +24,7 @@ Route::get('/binnacle', function () {
     return view('binnacle');
 });
 
+
 Route::get('/vehicles', function () {
     return view('vehicles');
 });

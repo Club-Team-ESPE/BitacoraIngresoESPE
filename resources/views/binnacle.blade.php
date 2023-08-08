@@ -27,14 +27,14 @@
             {{-- TABLA SUPERIOR --}}
             <div class="card">
 
-                <div class="card-header">
-                    <h1 class="card-title">REGISTRO DIARIO</h1>
+                <div class="card-header ">
+                    
                     <div class="card-tools">
                     </div>
                 </div>
 
-                <div class="card-body table-responsive p-0">
-                    <table id="tablaUno" class="table table-hover text-nowrap">
+                <div class="card-body table-responsive pl-2 pr-2">
+                    <table id="binnacleTable" class="table table-hover text-nowrap">
                         <thead>
                             <tr>
                                 <th class="text-center">ORD</th>
@@ -64,7 +64,7 @@
                     @endforeach --}}
 
                             {{-- MEDIANTE UN CICLO FOR CREAR 4 FILAS CON 4 COLUMNAS CADA UNA --}}
-                            @for ($i = 0; $i < 5; $i++)
+                            @for ($i = 0; $i < 15; $i++)
                                 <tr>
                                     <td class="text-center">
                                         {{ $i + 1 }}
@@ -135,7 +135,7 @@
         console.log('Hi!');
 
 
-        $("#tablaUno").dataTable({
+        $("#binnacleTable").dataTable({
             "paging": true,
             "ordering": false,
             "language": {
