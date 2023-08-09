@@ -12,6 +12,8 @@ class Guard extends Model
 
     protected $fillable=[
         "identification_card",
+        "names",
+        "last_names",
         "phone",
         "blood_type",
         "password",

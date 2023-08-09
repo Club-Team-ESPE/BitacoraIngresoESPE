@@ -12,7 +12,7 @@ class Vehicle extends Model
 
     protected $fillable=[
         "description",
-        "code",
+        "plate",
         "in_university",
         "created_by",
         "updated_by",

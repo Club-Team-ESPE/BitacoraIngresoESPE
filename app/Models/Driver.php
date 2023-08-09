@@ -13,6 +13,8 @@ class Driver extends Model
     
     protected $fillable=[
         "identification_card",
+        "names",
+        "last_names",
         "phone",
         "blood_type",
         "rank_id",

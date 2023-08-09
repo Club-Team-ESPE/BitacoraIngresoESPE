@@ -13,8 +13,5 @@ class Rank extends Model
       protected $fillable=[
         "name",
         "code",
-        "created_by",
-        "updated_by",
-        "deleted_by"
     ];
 }

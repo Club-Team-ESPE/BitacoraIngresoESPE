@@ -44,43 +44,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($registros1 as $item)
-                        <tr>
-                            <td>
-                                {{ $item->PLACA }}
-                            </td>
-                            <td style="max-width: 800px; min-width: 200px;
-                            white-space: normal;">
-                                {{ $item->DESCRIPCION }}
-                            </td>
-                            <td>
-                                {{ $item->REGISTRO }}
-                            </td>
-                            <td>
-                                {{ $item->FECHAHORASALIDA }}
-                            </td>
-                        </tr>
-                    @endforeach --}}
-
-                            {{-- MEDIANTE UN CICLO FOR CREAR 4 FILAS CON 4 COLUMNAS CADA UNA --}}
-                            @for ($i = 0; $i < 15; $i++)
+                            <?php $ord = 0; ?>
+                            @foreach ($novelties as $item)
                                 <tr>
                                     <td class="text-center">
-                                        {{ $i + 1 }}
+                                        {{ ++$ord }}                                        
                                     </td>
-                                    <td
-                                        style="max-width: 800px; min-width: 200px;
-                            white-space: normal;">
-                                        NOVEDADES
+                                    <td class="">
+                                        {{ $item->novelty }}
                                     </td>
                                     <td class="text-center">
-                                        -
+                                        {{ $item->hour }}
                                     </td>
                                     <td class="text-center">
-                                        -
+                                        {{ $item->Guard }}
                                     </td>
+                                    
                                 </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -100,15 +81,15 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="#" method="POST">
+                <form action="{{ route('binacle.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
 
                         <div id="modificarRegistro" class="row mt-3" style="">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="observacion">Detalle la novedad</label>
-                                    <textarea name="observacion" id="observacion" class="form-control" rows="3" ></textarea>
+                                    <label for="novelty">Detalle la novedad: </label>
+                                    <textarea name="novelty" id="novelty" class="form-control" rows="3" ></textarea>
                                 </div>
                             </div>
 

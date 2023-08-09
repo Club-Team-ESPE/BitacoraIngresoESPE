@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\NoveltyController;
+use App\Models\Novelty;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('prueba', function () {
+    return DB::select("select * from view_novelties;");
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,9 +28,11 @@ Route::get('/index1', function () {
     return view('welcome');
 });
 
-Route::get('/binnacle', function () {
-    return view('binnacle');
-});
+// ****************** BITÁCORA NOVEDADES ******************
+//RUTA PARA MOSTRAR NOVEDADES
+Route::get('/binnacle', [NoveltyController::class,'index'])->name("binnacle.index");
+//CREAR NUEVA NOVEDAD
+Route::post('/binnacle/newBinnacle', [NoveltyController::class,'store'])->name("binacle.store");
 
 
 Route::get('/vehicles', function () {
