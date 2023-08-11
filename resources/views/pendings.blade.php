@@ -37,45 +37,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($registros1 as $item)
-                    <tr>
-                        <td>
-                            {{ $item->PLACA }}
-                        </td>
-                        <td style="max-width: 800px; min-width: 200px;
-                        white-space: normal;">
-                            {{ $item->DESCRIPCION }}
-                        </td>
-                        <td>
-                            {{ $item->REGISTRO }}
-                        </td>
-                        <td>
-                            {{ $item->FECHAHORASALIDA }}
-                        </td>
-                    </tr>
-                @endforeach --}}
-
-                        {{-- MEDIANTE UN CICLO FOR CREAR 4 FILAS CON 4 COLUMNAS CADA UNA --}}
-                        @for ($i = 0; $i < 5; $i++)
+                        <?php $ord = 0; ?>
+                        @foreach ($penddings as $item)
                             <tr>
                                 <td class="text-center">
-                                    {{ $i + 1 }}
-                                </td>
-                                <td>
-                                    00:00
+                                    {{ ++$ord }}
                                 </td>
                                 <td class="text-center">
-                                    - NOVEDAD
+                                    {{ $item->hour_create }}
+                                </td>
+                                <td style="max-width: 800px; min-width: 200px;
+                            ">
+                                    {{ $item->pending_task }}
                                 </td>
                                 <td class="text-center">
-                                    - Capt. Paredes
+                                    {{ $item->guardCreate }}
                                 </td>
                                 <td class="text-center">
-                                    <button class="btn btn-danger" 
-                                    data-toggle="modal" data-target="#modalPenddingDone">REALIZADA</button>
+
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                        data-target="#modalPenddingDone">REALIZADA</button>
+
                                 </td>
+
                             </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                 </table>
 
@@ -107,50 +93,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($registros1 as $item)
-                    <tr>
-                        <td>
-                            {{ $item->PLACA }}
-                        </td>
-                        <td style="max-width: 800px; min-width: 200px;
-                        white-space: normal;">
-                            {{ $item->DESCRIPCION }}
-                        </td>
-                        <td>
-                            {{ $item->REGISTRO }}
-                        </td>
-                        <td>
-                            {{ $item->FECHAHORASALIDA }}
-                        </td>
-                    </tr>
-                @endforeach --}}
-
-                        {{-- MEDIANTE UN CICLO FOR CREAR 4 FILAS CON 4 COLUMNAS CADA UNA --}}
-                        @for ($i = 0; $i < 5; $i++)
-                            <tr>
-                                <td class="text-center">
-                                    {{ $i + 1 }}
-                                </td>
-                                <td>
-                                    -
-                                </td>
-                                <td class="text-center">
-                                    - 00:00
-                                </td>
-                                <td class="text-center">
-                                    - 00:00
-                                </td>
-                                <td class="text-center">
-                                    - Capt. Paredes
-                                </td>
-                                <td class="text-center">
-                                    - Sgto. Paredes
-                                </td>
-                                <td class="text-center">
-                                    S/N
-                                </td>
-                            </tr>
-                        @endfor
+                        <?php $ord = 0; ?>
+                        @foreach ($penddingsDone as $item2 )
+                        <tr>
+                            <td class="text-center">
+                                {{ ++$ord }}
+                            </td>
+                            <td>
+                                {{ $item2->pending_task }}
+                            </td>
+                            <td class="text-center">
+                                {{ $item2->hour_create }}
+                            </td>  
+                            <td class="text-center">
+                                {{ $item2->hour_done }}
+                            </td>
+                            <td class="text-center">
+                                {{ $item2->guardCreate }}
+                            </td>
+                            <td class="text-center">
+                                {{ $item2->guardDone }}
+                            </td>
+                            <td>
+                                {{ $item2->observations }}
+                            </td>
+                        </tr>
+                            
+                        @endforeach
+                        
                     </tbody>
                 </table>
 
@@ -170,7 +140,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="#" method="POST">
+                <form action="{{ route('pendding.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
 
@@ -178,7 +148,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="newPendding">Detalle la consigna:</label>
-                                    <textarea name="newPendding" id="newPendding" class="form-control" rows="3" ></textarea>
+                                    <textarea name="newPendding" id="newPendding" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
 
@@ -210,8 +180,9 @@
                         <div id="modificarRegistro" class="row mt-3" style="">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="penddingDone">Indíque si tuvo alguna novedad realizando la consinga:</label>
-                                    <textarea name="penddingDone" id="penddingDone" class="form-control" rows="3" ></textarea>
+                                    <label for="penddingDone">Indíque si tuvo alguna novedad realizando la
+                                        consinga:</label>
+                                    <textarea name="penddingDone" id="penddingDone" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
 

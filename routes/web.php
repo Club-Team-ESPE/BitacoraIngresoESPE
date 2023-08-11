@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NoveltyController;
+use App\Http\Controllers\PendingTaskController;
 use App\Models\Novelty;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -34,13 +35,15 @@ Route::get('/binnacle', [NoveltyController::class,'index'])->name("binnacle.inde
 //CREAR NUEVA NOVEDAD
 Route::post('/binnacle/newBinnacle', [NoveltyController::class,'store'])->name("binacle.store");
 
+// ****************** BITÁCORA CONSIGNAS ******************
+//RUTA PARA MOSTRAR CONSIGNAS PENDIENTES
+Route::get('/pendings', [PendingTaskController::class,'index'])->name("pendding.index");
+//CREAR NUEVA CONSIGNA
+Route::post('/pendings/newPending', [PendingTaskController::class,'store'])->name("pendding.store");
+
 
 Route::get('/vehicles', function () {
     return view('vehicles');
-});
-
-Route::get('/pendings', function () {
-    return view('pendings');
 });
 
 Route::get('/reports', function () {
@@ -50,6 +53,6 @@ Route::get('/reports', function () {
 
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
